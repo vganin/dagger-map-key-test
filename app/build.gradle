@@ -1,0 +1,41 @@
+apply plugin: 'com.android.application'
+
+// Assists in working with annotation processors for Android Studio.
+apply plugin: 'com.neenbedankt.android-apt'
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion "23.0.2"
+
+    defaultConfig {
+        applicationId "net.ganin.dmkt"
+        minSdkVersion 15
+        targetSdkVersion 23
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    testCompile 'junit:junit:4.12'
+    compile 'com.android.support:appcompat-v7:23.1.1'
+    compile 'com.android.support:design:23.1.1'
+
+    // Dagger 2 and Compiler
+    compile 'com.google.dagger:dagger:2.0.1'
+    apt "com.google.dagger:dagger-compiler:2.0.1"
+
+    // Needed for @Generated annotation (missing in Android API jar)
+    // No longer needed in dagger >= 2.1-SNAPSHOT (github.com/google/dagger/issues/95)
+    compile 'javax.annotation:jsr250-api:1.0'
+
+    // Butterknife
+    compile 'com.jakewharton:butterknife:7.0.1'
+}
