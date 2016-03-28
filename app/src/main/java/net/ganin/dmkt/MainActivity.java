@@ -23,13 +23,11 @@ public class MainActivity extends AppCompatActivity {
         ButterKnife.bind(this);
     }
 
-    @SuppressWarnings("unused") // Butterknife injected
     @OnClick(R.id.click_foo)
     void onFooClicked() {
         addToText(DumbContentProvider.request(getContentResolver(), DumbContentProvider.ID_FOO));
     }
 
-    @SuppressWarnings("unused") // Butterknife injected
     @OnClick(R.id.click_bar)
     void onBarClicked() {
         addToText(DumbContentProvider.request(getContentResolver(), DumbContentProvider.ID_BAR));
