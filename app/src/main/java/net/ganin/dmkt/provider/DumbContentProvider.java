@@ -11,6 +11,7 @@ import android.support.annotation.Nullable;
 import android.support.annotation.StringDef;
 import android.support.annotation.WorkerThread;
 
+import net.ganin.dmkt.provider.handler.DaggerUriHandlerComponent;
 import net.ganin.dmkt.provider.handler.UriHandler;
 
 import java.lang.annotation.Retention;
